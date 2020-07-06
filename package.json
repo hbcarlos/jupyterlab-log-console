@@ -1,0 +1,49 @@
+{
+  "name": "jupyterlab-log-console",
+  "version": "0.1.0",
+  "description": "JupyterLab log console extension for other extensions and python programs using ipylab.",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "homepage": "https://github.com/hbcarlos/jupyterlab-log-console",
+  "bugs": {
+    "url": "https://github.com/hbcarlos/jupyterlab-log-console/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": "QuantStack",
+  "files": [
+    "build/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}",
+    "schema/**/*.json"
+  ],
+  "main": "build/index.js",
+  "types": "build/src/index.d.ts",
+  "style": "style/index.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbcarlos/jupyterlab-log-console.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf build tsconfig.tsbuildinfo",
+    "prepare": "jlpm run clean && jlpm run build",
+    "watch": "tsc -w"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.0"
+  },
+  "sideEffects": [
+    "style/*.css"
+  ],
+  "jupyterlab": {
+    "extension": true
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^2.1.2",
+    "@jupyterlab/apputils": "^2.1.1",
+    "@jupyterlab/ui-components": "^2.1.1",
+    "@lumino/coreutils": "^1.5.2"
+  }
+}
