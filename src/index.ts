@@ -43,6 +43,18 @@ const extension: JupyterFrontEndPlugin<void> = {
       label: 'Send log message'
     });
 
+    const msg: any = {
+      date: new Date(),
+      level: 'debug', // 'debug' | 'info' | 'warning' | 'error' | 'critical'
+      name: "Error: ...",
+      file: "untitled.py",
+      line: 1,
+      msg: "Message trace",
+      toggled: false
+  };
+
+    palette.addItem({ command: 'jupyterlab-log-console:sendMessage', category: 'Extensions', args: msg });
+
     commands.addCommand('jupyterlab-log-console:open', {
       label: 'Log Console',
       caption: 'Log console.',
